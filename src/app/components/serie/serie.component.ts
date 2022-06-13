@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Serie } from 'src/app/entities/serie';
 
 @Component({
   selector: 'app-serie',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SerieComponent implements OnInit {
 
+  @Input() serie:Serie|any={};
   constructor() { }
 
   ngOnInit(): void {

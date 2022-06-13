@@ -1,10 +1,11 @@
-<input type="text" placeholder="Título de la serie">
+<input type="text" placeholder="Título de la serie" [(ngModel)]="serie.titulo">
 <br>
-<input type="text" placeholder="Sinopsis">
+<input type="text" placeholder="Sinopsis" [(ngModel)]="serie.sinopsis">
 <br>
-<input type="number" placeholder="Temporadas">
+<input type="number" placeholder="Temporadas" [(ngModel)]="serie.numeroTemporadas">
 <br>
-
+{{ serie | json }}
+<!--
 <select (click)="cambiarImagen($event)">
     <option value="netflix.jpg">Netflix SE VE</option>
     <option value="hbo.jpg">HBO SE VE</option>
@@ -12,7 +13,7 @@
 </select>
 <br>
 <img [src]="imagen" width="200px">
-
+-->
 <br>
 <button (click)="crearSerie()">Crear serie</button>
 <button (click)="limpiar()">Limpiar formulario</button>

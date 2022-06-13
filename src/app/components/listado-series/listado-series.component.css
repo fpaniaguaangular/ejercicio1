@@ -1,0 +1,12 @@
+.ficha {
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    margin: 10px;
+}
+.verde {
+    background-color: green;
+}
+.red { 
+    background-color: red;
+}

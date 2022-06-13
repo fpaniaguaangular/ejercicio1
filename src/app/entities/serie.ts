@@ -3,7 +3,7 @@ export interface Serie {
     sinopsis:string,
     numeroTemporadas:number,
     plataforma:string,
-    director:Director
+    director:string
 }
 
 export interface Director {

@@ -1,1 +1,6 @@
-<app-serie></app-serie>
+<h1>Listado de series</h1>
+<div class="centered">
+    <section class="cards" *ngFor="let serie of series">
+        <app-serie [serie]="serie"></app-serie>
+    </section>
+</div>
