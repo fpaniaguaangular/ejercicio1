@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { EncabezadoComponent } from './components/encabezado/encabezado.component';
 import { PieComponent } from './components/pie/pie.component';
 import { ListadoSeriesComponent } from './components/listado-series/listado-series.component';

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-encabezado',
@@ -16,12 +16,13 @@ export class EncabezadoComponent implements OnInit, OnChanges, AfterViewInit, On
   constructor() { 
     console.log("Constructor...");
   }
- 
-  ngOnInit():void {
+
+  ngOnInit(): void {
     console.log("ngOnInit...");
+    this.metodoPruebaError();
   }
 
-  ngOnChanges():void {
+  ngOnChanges(changes: SimpleChanges): void {
     console.log("ngOnChanges...");
   }
 
@@ -32,5 +33,22 @@ export class EncabezadoComponent implements OnInit, OnChanges, AfterViewInit, On
   ngOnDestroy():void {
     console.log("ngOnDestroy...");
   }
+
+  metodoPruebaError():void {
+    try {
+      let resultado = this.calcularDoble(4);
+      console.log(resultado);
+    } catch (objetoDelError) {
+      console.error("Te has equivocado, el número no puede impar");
+    }
+  }
   
+  calcularDoble(numero:number):number{
+    if (numero%2==0){
+      return numero*2;
+    } else {
+      throw new Error("El número es impar");
+    }
+  }
+
 }

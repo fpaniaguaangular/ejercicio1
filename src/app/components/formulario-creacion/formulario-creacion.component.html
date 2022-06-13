@@ -1,1 +1,18 @@
-<p>formulario-creacion works!</p>
+<input type="text" placeholder="Título de la serie">
+<br>
+<input type="text" placeholder="Sinopsis">
+<br>
+<input type="number" placeholder="Temporadas">
+<br>
+
+<select (click)="cambiarImagen($event)">
+    <option value="netflix.jpg">Netflix SE VE</option>
+    <option value="hbo.jpg">HBO SE VE</option>
+    <option value="primevideo.jpg">Prime Video SE VE</option>
+</select>
+<br>
+<img [src]="imagen" width="200px">
+
+<br>
+<button (click)="crearSerie()">Crear serie</button>
+<button (click)="limpiar()">Limpiar formulario</button>

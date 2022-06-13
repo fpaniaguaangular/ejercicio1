@@ -1,0 +1,10 @@
+footer {
+    background-color: antiquewhite;
+}
+
+.activado {
+    color: green;
+}
+.desactivado { 
+    color: red;
+}

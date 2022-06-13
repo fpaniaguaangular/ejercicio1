@@ -2,6 +2,7 @@ export interface Serie {
     titulo:string,
     sinopsis:string,
     numeroTemporadas:number,
+    plataforma:string,
     director:Director
 }
 

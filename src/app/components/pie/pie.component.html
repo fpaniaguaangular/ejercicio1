@@ -1,1 +1,12 @@
-<p>pie works!</p>
+<footer>
+    <div class={{estadoAnyo}}>{{ anyo }} (c)</div>
+    <div class="{{estadoAnyo}}">{{ anyo }} (c)</div>
+    <div [class]="estadoAnyo">{{ anyo }} (c)</div>
+    <button (click)="conmutar()">Conmutar</button>
+    <div>{{ getPropietario() }}</div>
+    <div>{{ activo ? getPropietario() : "" }}</div>
+    <div>{{ activo ? "ACTIVO" : "DESACTIVADO" }}</div>
+    <div>{{ anyo>=2000 ? "SIGLO XXI" : "SIGLO XX" }}</div>
+    <button id="boton1" (click)="accionBoton($event)">Botón 1</button>
+    <button id="boton2" (click)="accionBoton($event)">Botón 2</button>
+</footer>
