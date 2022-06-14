@@ -1,0 +1,9 @@
+.nivel1 {
+    width: 100%;
+    height: 10em;
+    background-color: bisque;
+}
+.colores-inversos {
+    background-color: black;
+    color:white;
+}

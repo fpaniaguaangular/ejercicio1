@@ -10,6 +10,8 @@ import { PieComponent } from './components/pie/pie.component';
 import { ListadoSeriesComponent } from './components/listado-series/listado-series.component';
 import { SerieComponent } from './components/serie/serie.component';
 import { FormularioCreacionComponent } from './components/formulario-creacion/formulario-creacion.component';
+import { EncabezadoPrincipalComponent } from './components/encabezado-principal/encabezado-principal.component';
+import { EncabezadoSecundarioComponent } from './components/encabezado-secundario/encabezado-secundario.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FormularioCreacionComponent } from './components/formulario-creacion/fo
     PieComponent,
     ListadoSeriesComponent,
     SerieComponent,
-    FormularioCreacionComponent
+    FormularioCreacionComponent,
+    EncabezadoPrincipalComponent,
+    EncabezadoSecundarioComponent
   ],
   imports: [
     BrowserModule,

@@ -8,9 +8,17 @@ import { SeriesService } from 'src/app/services/series.service';
   styleUrls: ['./formulario-creacion.component.css']
 })
 export class FormularioCreacionComponent implements OnInit {
-  //static prefijo:string = "./assets/";
-  //imagen:string="";
-  public serie : Serie = { titulo:"", sinopsis:"", numeroTemporadas:0, plataforma:"", director:""};
+  static prefijo:string = "./assets/";
+  imagen:string="";
+  public serie : Serie = { 
+    titulo:"", 
+    sinopsis:"", 
+    numeroTemporadas:0, 
+    plataforma:"", 
+    director:"", 
+    enEmision:true,
+    genero:"",
+  };
 
   constructor(private seriesService:SeriesService) { 
 
@@ -20,7 +28,7 @@ export class FormularioCreacionComponent implements OnInit {
   }
 
   cambiarImagen(evento:any):void {
-    //this.imagen = FormularioCreacionComponent.prefijo + evento.target.value;
+    this.imagen = FormularioCreacionComponent.prefijo + evento.target.value;
   }
 
   crearSerie():void{
@@ -30,6 +38,6 @@ export class FormularioCreacionComponent implements OnInit {
   }
 
   limpiar():void{
-    this.serie = { titulo:"", sinopsis:"", numeroTemporadas:0, plataforma:"", director:""};
+    this.serie = { titulo:"", sinopsis:"", numeroTemporadas:0, plataforma:"", director:"", enEmision:true, genero:""};
   }
 }

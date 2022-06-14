@@ -11,6 +11,9 @@ export class SerieComponent implements OnInit {
 
   @Input() serie:Serie|any={};
   @Output() eventoFavorito:EventEmitter<Serie>;
+  favorito:boolean=false;
+
+  estilo:string[]=["card"];
   
   constructor(private servicioSeries:SeriesService) { 
     console.log("En el constructor:" + this.serie.titulo);//En este punto, serie no está disponible (no se ha inyectado)
@@ -23,6 +26,7 @@ export class SerieComponent implements OnInit {
 
   seleccionar(){
     this.eventoFavorito.emit(this.serie);
+    this.favorito=true;
   }
   eliminar(){
     this.servicioSeries.deleteSerie(this.serie);

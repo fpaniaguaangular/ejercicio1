@@ -1,16 +1,18 @@
 <input type="text" placeholder="Título de la serie" [(ngModel)]="serie.titulo">
 <input type="text" placeholder="Sinopsis" [(ngModel)]="serie.sinopsis">
 <input type="number" placeholder="Temporadas" [(ngModel)]="serie.numeroTemporadas">
-<br>
-<!--
-<select (click)="cambiarImagen($event)">
+<label for="idPlataforma">Plataforma: </label>
+<select id="idPlataforma" (click)="cambiarImagen($event)" [(ngModel)]="serie.plataforma">
     <option value="netflix.jpg">Netflix SE VE</option>
     <option value="hbo.jpg">HBO SE VE</option>
     <option value="primevideo.jpg">Prime Video SE VE</option>
-</select>
+</select><label for="idEnEmision">En emisión: </label>
+<input id="idEnEmision" type="checkbox" [(ngModel)]="serie.enEmision">
+<label for="idTerror">Terror:</label><input id="idTerror" type="radio" [(ngModel)]="serie.genero" value="Terror">
+<label for="idComedia">Comedia:</label><input id="idComedia" type="radio" [(ngModel)]="serie.genero" value="Comedia">
+<label for="idDrama">Drama:</label><input id="idDrama" type="radio" [(ngModel)]="serie.genero" value="Drama">
 <br>
-<img [src]="imagen" width="200px">
--->
+<img [src]="imagen" width="120px">
 <br>
 <button (click)="crearSerie()">Crear serie</button>
 <button (click)="limpiar()">Limpiar formulario</button>

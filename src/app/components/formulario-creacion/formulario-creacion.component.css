@@ -1,7 +1,7 @@
 .fondorojo {
     background-color: red;
 }
-input {
+input, select {
     padding: 8px;
     margin: 10px 10px 10px 0px;
 }

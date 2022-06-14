@@ -3,7 +3,9 @@ export interface Serie {
     sinopsis:string,
     numeroTemporadas:number,
     plataforma:string,
-    director:string
+    director:string,
+    enEmision:boolean,
+    genero:string,
 }
 
 export interface Director {
