@@ -9,12 +9,17 @@ import { SeriesService } from 'src/app/services/series.service';
 })
 export class ListadoSeriesComponent implements OnInit {
   public series:Serie[];
+  public serieFavorita:string = "Ninguna";
   constructor(private seriesService:SeriesService) { 
     this.series = this.seriesService.getSeries();
     console.log(this.series);
   }
 
   ngOnInit(): void {
+  }
+
+  marcarFavorito(serie:Serie) {
+    this.serieFavorita=serie.titulo;
   }
 
 }

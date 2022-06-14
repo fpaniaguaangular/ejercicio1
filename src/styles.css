@@ -5,16 +5,16 @@ body {
 }
 
 .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    float:left;
  }
   
  .card {
-    flex: 0 1 calc(30% - 1em);
     height: 200px;
-    background-color: beige;
+    width: 200px;
+    background-color: rgb(57, 57, 57);
     margin-bottom: 10px;
     padding: 1em;
-    box-shadow: 2px 2px #888;
+    box-shadow: 2px 2px rgb(0, 0, 0);
+    color:white;
+    margin:5px;
  }

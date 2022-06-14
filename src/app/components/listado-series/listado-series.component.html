@@ -1,6 +1,6 @@
-<h1>Listado de series</h1>
+<h1>Listado de series. Serie favorita: {{serieFavorita}}</h1>
 <div class="centered">
-    <section class="cards" *ngFor="let serie of series">
-        <app-serie [serie]="serie"></app-serie>
-    </section>
+    <div class="cards" *ngFor="let serie of series">
+        <app-serie [serie]="serie" (eventoFavorito)="marcarFavorito($event)"></app-serie>
+    </div>
 </div>

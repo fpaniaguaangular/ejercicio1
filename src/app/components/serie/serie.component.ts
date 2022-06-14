@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Serie } from 'src/app/entities/serie';
+import { SeriesService } from 'src/app/services/series.service';
 
 @Component({
   selector: 'app-serie',
@@ -9,9 +10,21 @@ import { Serie } from 'src/app/entities/serie';
 export class SerieComponent implements OnInit {
 
   @Input() serie:Serie|any={};
-  constructor() { }
-
-  ngOnInit(): void {
+  @Output() eventoFavorito:EventEmitter<Serie>;
+  
+  constructor(private servicioSeries:SeriesService) { 
+    console.log("En el constructor:" + this.serie.titulo);//En este punto, serie no está disponible (no se ha inyectado)
+    this.eventoFavorito = new EventEmitter<Serie>();
   }
 
+  ngOnInit(): void {
+    console.log("En el ngOnInit:" + this.serie.titulo);//En este punto, serie está disponible (ha sido inyectado)
+  }
+
+  seleccionar(){
+    this.eventoFavorito.emit(this.serie);
+  }
+  eliminar(){
+    this.servicioSeries.deleteSerie(this.serie);
+  }
 }

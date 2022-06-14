@@ -1,3 +1,11 @@
 .fondorojo {
     background-color: red;
 }
+input {
+    padding: 8px;
+    margin: 10px 10px 10px 0px;
+}
+button {
+    padding: 10px;
+    margin-right: 10px;
+}

@@ -24,11 +24,12 @@ export class FormularioCreacionComponent implements OnInit {
   }
 
   crearSerie():void{
-    let nuevaSerie = {...this.serie};
+    let nuevaSerie = {...this.serie};//Spread operator para crear una copia del objeto.
     this.seriesService.addSerie(nuevaSerie);
+    this.limpiar();
   }
 
   limpiar():void{
-
+    this.serie = { titulo:"", sinopsis:"", numeroTemporadas:0, plataforma:"", director:""};
   }
 }
