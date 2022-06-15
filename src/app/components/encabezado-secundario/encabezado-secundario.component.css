@@ -7,3 +7,23 @@
     background-color: black;
     color:white;
 }
+.activado {
+    background-color: green;
+    color:white;
+}
+.desactivado {
+    background-color: red;
+    color:white;
+}
+.caro {
+    background-color: red;
+    color:white;
+}
+.barato {
+    background-color: greenyellow;
+    color: black;
+}
+.saldo {
+    font-weight: bolder;
+    font-style: italic;
+}

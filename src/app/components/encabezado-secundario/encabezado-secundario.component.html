@@ -1,5 +1,14 @@
-<h3 [ngClass]="estilos">Encabezado secundario</h3>
+<h3 [ngClass]="estilos">Encabezado secundario</h3><!--ARRAY DE STRING (clases CSS) CONTENIDO EN EL TS-->
+<h3 [ngClass]="['nivel1','activado']">Encabezado secundario</h3><!--ARRAY DE STRING CON REFERENCIAS A CLASES CSS-->
 <h4>Subtítulo de la aplicación</h4>
 <div>
     <button (click)="agregarEstilo()">Agregar estilo</button>
+</div>
+<div>
+    <!-- APLICAR CLASE, SI CONDICIÓN-->
+    <h3 [ngClass]="{activado:activo, desactivado:!activo}">¿Estoy en estado activo? {{activo}}</h3>
+    <h3 [ngClass]="{caro:precio>5,barato:precio<=5}">{{precio}}€</h3>
+    <h3 [ngClass]="{caro:precio>UMBRAL_PRECIO,barato:precio<=UMBRAL_PRECIO}">{{precio}}€</h3>
+    <h3 [ngClass]="{caro:esCaro(),barato:!esCaro(),saldo:enSaldo()}">{{precio}}€€</h3>
+    <h3 [ngClass]="{'caro':esCaro(),'barato saldo':!esCaro()}">{{precio}}€€</h3>
 </div>

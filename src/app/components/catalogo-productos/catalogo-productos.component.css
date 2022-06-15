@@ -1,0 +1,18 @@
+.caro {
+    background-color: red;
+    color: white;
+}
+.medio {
+    background-color: orange;
+    color: white;
+}
+.barato {
+    background-color: green;
+    color:white;
+}
+.numerico {
+    text-align: right;
+}
+td {
+    padding: 8px;
+}

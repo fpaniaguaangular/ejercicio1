@@ -12,6 +12,7 @@ import { SerieComponent } from './components/serie/serie.component';
 import { FormularioCreacionComponent } from './components/formulario-creacion/formulario-creacion.component';
 import { EncabezadoPrincipalComponent } from './components/encabezado-principal/encabezado-principal.component';
 import { EncabezadoSecundarioComponent } from './components/encabezado-secundario/encabezado-secundario.component';
+import { CatalogoProductosComponent } from './components/catalogo-productos/catalogo-productos.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EncabezadoSecundarioComponent } from './components/encabezado-secundari
     SerieComponent,
     FormularioCreacionComponent,
     EncabezadoPrincipalComponent,
-    EncabezadoSecundarioComponent
+    EncabezadoSecundarioComponent,
+    CatalogoProductosComponent
   ],
   imports: [
     BrowserModule,

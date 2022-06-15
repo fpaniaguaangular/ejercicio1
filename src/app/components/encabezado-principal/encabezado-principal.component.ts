@@ -10,7 +10,7 @@ export class EncabezadoPrincipalComponent implements OnInit {
   claseVariable:any;
   constructor() { 
     this.claseRoja = {
-      color:'orange',
+      color:'rgb(100,250,10)',
       backgroundColor:'blue'
     }
     this.claseVariable = {

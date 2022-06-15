@@ -1,0 +1,51 @@
+<div>
+    <input type="text" placeholder="Nombre de producto" [(ngModel)]="producto.nombre">
+    <input type="number" placeholder="Precio de producto" [(ngModel)]="producto.precio">
+    <button (click)="agregarProducto()">Agregar</button>
+    <h1>{{nombreCatalogo}} - ngClass</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th><th>Precio</th><th>Precio 2</th>
+            </tr>        
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of productos" [ngClass]="{caro:producto.esCaro(),medio:producto.esMedio(),barato:producto.esBarato()}">
+                <td>{{producto.nombre}}</td>
+                <td [ngStyle]="{textAlign:'right'}">{{producto.precio}}</td>
+                <td [ngClass]="estilos">{{producto.precio}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>{{nombreCatalogo}} - ngClass y métodos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th><th>Precio</th><th>Precio 2</th>
+            </tr>        
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of productos" [ngClass]="getEstiloPrecio(producto)">
+                <td>{{producto.nombre}}</td>
+                <td [ngStyle]="{textAlign:'right'}">{{producto.precio}}</td>
+                <td [ngClass]="getEstilos(producto)">{{producto.precio}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>{{nombreCatalogo}} - ngStyle</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th><th>Precio</th><th>Precio 2</th>
+            </tr>        
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of productos" [ngStyle]="getEscalaColor(producto.precio)">
+                <td>{{producto.nombre}}</td>
+                <td [ngStyle]="{textAlign:'right'}">{{producto.precio}}</td>
+                <td [ngClass]="estilos">{{producto.precio}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>{{nombreCatalogo}}</h1>
+</div>
