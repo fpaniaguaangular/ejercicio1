@@ -1,0 +1,60 @@
+<h1>Directivas estructurales</h1>
+<h2>ngIf</h2>
+<div>
+    <div>
+        <input type="checkbox" [(ngModel)]="activo">
+    </div>
+    <div *ngIf="activo">
+        <h3>Estoy activo...</h3>
+    </div>
+    <div>
+        <input type="number" [(ngModel)]="importe">
+    </div>
+    <div *ngIf="importe>50">
+        <h3>Valgo más de 50€</h3>
+    </div>
+    <div *ngIf="superiorA50()">
+        <h3>Valgo más de 50€</h3>
+    </div>
+
+    <div *ngIf="superiorA50(); then bloque1 else bloque2">
+        <!-- AQUÍ VAN LOS TEMPLATES-->
+    </div>
+    <ng-template #bloque1>
+        <h1>Bloque 1</h1>
+    </ng-template>
+    <ng-template #bloque2>
+        <h1>Bloque 2</h1>
+    </ng-template>
+</div>
+<h2>ngFor</h2>
+    <ul>
+        <li *ngFor="let dia of diasSemana">
+            {{dia}}
+        </li>
+    </ul>
+    <ul>
+        <li *ngFor="let dia of diasSemana; index as i">
+            {{i}}-{{dia}}
+        </li>
+    </ul>
+<h2>ngSwitch</h2>
+    <div [ngSwitch]="dia">
+        <div *ngSwitchCase="'Lunes'">Es lunes</div>
+        <div *ngSwitchCase="'Martes'">Es martes</div>
+        <div *ngSwitchCase="'Miércoles'">Es miércoles</div>
+        <div *ngSwitchCase="'Jueves'">Es jueves</div>
+        <div *ngSwitchDefault>No sé qué día es</div>
+    </div>
+    <div [ngSwitch]="numeroOpciones">
+        <div *ngSwitchCase="1">Es uno</div>
+        <div *ngSwitchCase="2">Es dos</div>
+        <div *ngSwitchCase="3">Es tres</div>
+        <div *ngSwitchDefault>No sé qué número es</div>
+    </div>
+    <div [ngSwitch]="dia">
+        <div *ngSwitchCase="diasSemana[0]">¡Lunes!</div>
+        <div *ngSwitchCase="diasSemana[1]">¡Martes!</div>
+        <div *ngSwitchCase="diasSemana[2]">¡Miércoles!</div>
+        <div *ngSwitchCase="diasSemana[3]">¡Jueves!</div>
+    </div>
