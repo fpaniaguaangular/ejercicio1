@@ -1,33 +1,34 @@
-<h1>Directivas estructurales</h1>
-<h2>ngIf</h2>
-<div>
+<div id="estructural">
+    <h1>Directivas estructurales</h1>
+    <h2>ngIf</h2>
     <div>
-        <input type="checkbox" [(ngModel)]="activo">
-    </div>
-    <div *ngIf="activo">
-        <h3>Estoy activo...</h3>
-    </div>
-    <div>
-        <input type="number" [(ngModel)]="importe">
-    </div>
-    <div *ngIf="importe>50">
-        <h3>Valgo más de 50€</h3>
-    </div>
-    <div *ngIf="superiorA50()">
-        <h3>Valgo más de 50€</h3>
-    </div>
+        <div>
+            <input type="checkbox" [(ngModel)]="activo">
+        </div>
+        <div *ngIf="activo">
+            <h3>Estoy activo...</h3>
+        </div>
+        <div>
+            <input type="number" [(ngModel)]="importe">
+        </div>
+        <div *ngIf="importe>50">
+            <h3>Valgo más de 50€</h3>
+        </div>
+        <div *ngIf="superiorA50()">
+            <h3>Valgo más de 50€</h3>
+        </div>
 
-    <div *ngIf="superiorA50(); then bloque1 else bloque2">
-        <!-- AQUÍ VAN LOS TEMPLATES-->
+        <div *ngIf="superiorA50(); then bloque1 else bloque2">
+            <!-- AQUÍ VAN LOS TEMPLATES-->
+        </div>
+        <ng-template #bloque1>
+            <h1>Bloque 1</h1>
+        </ng-template>
+        <ng-template #bloque2>
+            <h1>Bloque 2</h1>
+        </ng-template>
     </div>
-    <ng-template #bloque1>
-        <h1>Bloque 1</h1>
-    </ng-template>
-    <ng-template #bloque2>
-        <h1>Bloque 2</h1>
-    </ng-template>
-</div>
-<h2>ngFor</h2>
+    <h2>ngFor</h2>
     <ul>
         <li *ngFor="let dia of diasSemana">
             {{dia}}
@@ -38,7 +39,7 @@
             {{i}}-{{dia}}
         </li>
     </ul>
-<h2>ngSwitch</h2>
+    <h2>ngSwitch</h2>
     <div [ngSwitch]="dia">
         <div *ngSwitchCase="'Lunes'">Es lunes</div>
         <div *ngSwitchCase="'Martes'">Es martes</div>
@@ -58,3 +59,4 @@
         <div *ngSwitchCase="diasSemana[2]">¡Miércoles!</div>
         <div *ngSwitchCase="diasSemana[3]">¡Jueves!</div>
     </div>
+</div>

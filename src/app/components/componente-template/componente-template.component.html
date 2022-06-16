@@ -1,0 +1,35 @@
+<div id="contenedor">
+    <h1>template-container-templateoutlet</h1>
+    <ng-container *ngTemplateOutlet="template1"></ng-container>
+
+    <ng-template #template1>
+        <h2>Contenido del template 1</h2>
+    </ng-template>
+    <ng-template #template2>
+        <h2>Contenido del template 2</h2>
+    </ng-template>
+    <ng-template #template3>
+        <h2>Contenido del template 3</h2>
+    </ng-template>
+    <h1>*ngComponentOutlet</h1>
+    
+    <app-ficha-demo></app-ficha-demo>
+    <ng-container *ngComponentOutlet="componenteDinamico"></ng-container>
+
+    <h1>ngPlural y ngPluralCase</h1>
+    <p>La cesta de la compra contiene {{cesta.length}} 
+        <span *ngIf="cesta.length==1">
+            producto
+        </span>
+        <span *ngIf="cesta.length>1">
+            productos
+        </span>
+    </p>
+    
+    <p [ngPlural]="cesta.length">
+        La cesta de la compra 
+        <ng-template ngPluralCase="=0">esta vacía</ng-template>
+        <ng-template ngPluralCase="=1">contiene {{cesta.length}} producto</ng-template>
+        <ng-template ngPluralCase="other">contiene {{cesta.length}} productos</ng-template>
+    </p>
+</div>
